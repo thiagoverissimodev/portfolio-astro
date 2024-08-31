@@ -1,3 +1,59 @@
-.time-line-container>div:last-child .education__time>.education__line {
-    display: none;
+.time-line-container > div:last-child .education__time > .education__line {
+  display: none;
+}
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.wave {
+  display: inline-block; /* Garante que a animação seja aplicada corretamente ao elemento */
+  transform-origin: 70% 70%; /* Ajusta o ponto de rotação para simular um aceno */
+  animation: wave 1s ease-in-out infinite; /* Loop contínuo */
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+.typing-effect {
+  font-size: 3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid black;
+  width: 0;
+  animation: typing 4s steps(30, end) 1s 1 normal both,
+    blink-caret 0.75s step-end infinite;
 }
